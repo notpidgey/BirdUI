@@ -45,7 +45,7 @@ position_t feather_component_t::get_position()
 
 position_t feather_component_t::get_true_position()
 {
-	uint32_t final_x, final_y = {};
+	uint32_t final_x = 0, final_y = 0;
 
 	std::shared_ptr<feather_component_t> current_parent = this->get_parent();
 	while (current_parent)

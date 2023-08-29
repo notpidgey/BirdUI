@@ -14,6 +14,17 @@ typedef std::vector<std::shared_ptr<feather_component_t>> children_components_t;
 class feather_component_t : public std::enable_shared_from_this<feather_component_t>
 {
 public:
+	explicit feather_component_t(position_t pos, dimension_t dim, bool render = true, bool input = true)
+	{
+		position = pos;
+		dimension = dimension;
+
+		render_enabled = render;
+		input_enabled = input;
+
+		get_true_position();
+	}
+
 	virtual void render();
 	virtual void handle_input();
 

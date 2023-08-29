@@ -3,13 +3,20 @@
 #include <memory>
 #include <vector>
 
-#include "utils/position.h"
-#include "utils/dimension.h"
+#include "BirdUI/utils/position.h"
+#include "BirdUI/utils/dimension.h"
 
 class feather_component_t;
 
 typedef std::weak_ptr<feather_component_t> parent_component_t;
 typedef std::vector<std::shared_ptr<feather_component_t>> children_components_t;
+
+#define CREATE_STATIC_CTORS(class_name) \
+	template <typename... Args> \
+	static std::shared_ptr<class_name> create(Args&&... args) \
+	{ \
+		return std::make_shared<class_name>(std::forward<Args>(args)...); \
+	} 
 
 class feather_component_t : public std::enable_shared_from_this<feather_component_t>
 {

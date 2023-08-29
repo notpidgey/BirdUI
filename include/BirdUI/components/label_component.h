@@ -12,17 +12,13 @@ public:
 		label_text = label;
 	}
 
-	template <typename... Args>
-	static std::shared_ptr<feather_label_component_t> create(Args&&... args)
-	{
-		return std::make_shared<feather_label_component_t>(std::forward<Args>(args)...);
-	}
+	CREATE_STATIC_CTOR(feather_label_component_t);
 
 	void set_text(std::string text);
 	std::string get_text();
 
 private:
-	std::string label_text;
-
 	void render() override;
+
+	std::string label_text;
 };

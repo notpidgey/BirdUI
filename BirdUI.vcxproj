@@ -18,6 +18,37 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\BirdUI\components\base_component.h" />
+    <ClInclude Include="include\BirdUI\components\label_component.h" />
+    <ClInclude Include="include\BirdUI\render\imconfig.h" />
+    <ClInclude Include="include\BirdUI\render\imgui.h" />
+    <ClInclude Include="include\BirdUI\render\imgui_impl_dx10.h" />
+    <ClInclude Include="include\BirdUI\render\imgui_impl_dx11.h" />
+    <ClInclude Include="include\BirdUI\render\imgui_impl_dx12.h" />
+    <ClInclude Include="include\BirdUI\render\imgui_impl_dx9.h" />
+    <ClInclude Include="include\BirdUI\render\imgui_impl_win32.h" />
+    <ClInclude Include="include\BirdUI\render\imgui_internal.h" />
+    <ClInclude Include="include\BirdUI\render\imstb_rectpack.h" />
+    <ClInclude Include="include\BirdUI\render\imstb_textedit.h" />
+    <ClInclude Include="include\BirdUI\render\imstb_truetype.h" />
+    <ClInclude Include="include\BirdUI\utils\position.h" />
+    <ClInclude Include="include\BirdUI\utils\dimension.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\components\base_component.cpp" />
+    <ClCompile Include="src\components\label_component.cpp" />
+    <ClCompile Include="src\render\imgui.cpp" />
+    <ClCompile Include="src\render\imgui_demo.cpp" />
+    <ClCompile Include="src\render\imgui_draw.cpp" />
+    <ClCompile Include="src\render\imgui_impl_dx10.cpp" />
+    <ClCompile Include="src\render\imgui_impl_dx11.cpp" />
+    <ClCompile Include="src\render\imgui_impl_dx12.cpp" />
+    <ClCompile Include="src\render\imgui_impl_dx9.cpp" />
+    <ClCompile Include="src\render\imgui_impl_win32.cpp" />
+    <ClCompile Include="src\render\imgui_tables.cpp" />
+    <ClCompile Include="src\render\imgui_widgets.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -70,6 +101,12 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(ProjectDir)include;$(ProjectDir)include\BirdUI</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(ProjectDir)include;$(ProjectDir)include\BirdUI</IncludePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -110,8 +147,9 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -127,8 +165,9 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -138,19 +177,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="framework.h" />
-    <ClInclude Include="pch.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="BirdUI.cpp" />
-    <ClCompile Include="pch.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
-    </ClCompile>
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

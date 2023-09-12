@@ -2,15 +2,19 @@
 #include "render_pipe.h"
 #include <Windows.h>
 
-class existing_window_pipe_t : public render_pipe_t
+template <typeof_dx_render T>
+class existing_window_pipe_t : public render_pipe_t<T>
 {
 public:
-	explicit existing_window_pipe_t(render_type ren, HWND )
-		: render_pipe_t(ren)
+	explicit existing_window_pipe_t(HWND hwnd_target)
+		: render_pipe_t<T>()
 	{
-
+		hwnd = hwnd_target;
 	}
 
 	void create();
 	void destroy();
+
+private:
+	HWND hwnd;
 };

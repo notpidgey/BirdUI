@@ -33,6 +33,8 @@
     <ClInclude Include="include\BirdUI\render\imstb_rectpack.h" />
     <ClInclude Include="include\BirdUI\render\imstb_textedit.h" />
     <ClInclude Include="include\BirdUI\render\imstb_truetype.h" />
+    <ClInclude Include="include\BirdUI\render\pipeline\directx\directx.h" />
+    <ClInclude Include="include\BirdUI\render\pipeline\directx\dx9.h" />
     <ClInclude Include="include\BirdUI\render\pipeline\existing_window.h" />
     <ClInclude Include="include\BirdUI\render\pipeline\new_window.h" />
     <ClInclude Include="include\BirdUI\render\pipeline\render_pipe.h" />
@@ -53,8 +55,10 @@
     <ClCompile Include="src\render\imgui_impl_win32.cpp" />
     <ClCompile Include="src\render\imgui_tables.cpp" />
     <ClCompile Include="src\render\imgui_widgets.cpp" />
+    <ClCompile Include="src\render\pipeline\directx\dx9.cpp" />
     <ClCompile Include="src\render\pipeline\existing_window.cpp" />
     <ClCompile Include="src\render\pipeline\new_window.cpp" />
+    <ClCompile Include="src\render\pipeline\render_pipe.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -110,9 +114,13 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(ProjectDir)include;$(ProjectDir)include\BirdUI</IncludePath>
+    <ExternalIncludePath>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include;$(ExternalIncludePath)</ExternalIncludePath>
+    <LibraryPath>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(ProjectDir)include;$(ProjectDir)include\BirdUI</IncludePath>
+    <ExternalIncludePath>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include;$(ExternalIncludePath)</ExternalIncludePath>
+    <LibraryPath>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

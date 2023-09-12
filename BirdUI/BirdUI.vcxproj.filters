@@ -60,6 +60,18 @@
     <ClInclude Include="include\BirdUI\components\label_component.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\BirdUI\bird.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\BirdUI\render\pipeline\new_window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\BirdUI\render\pipeline\existing_window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\BirdUI\render\pipeline\render_pipe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\components\base_component.cpp">
@@ -96,6 +108,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\components\label_component.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\bird.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\render\pipeline\new_window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\render\pipeline\existing_window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

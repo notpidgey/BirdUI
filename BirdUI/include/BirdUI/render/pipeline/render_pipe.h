@@ -1,8 +1,9 @@
 #pragma once
-#include "render/imgui.h"
-#include "render/pipeline/directx/directx.h"
+#include <type_traits>
+#include "BirdUI/render/imgui.h"
+#include "BirdUI/render/pipeline/directx/directx.h"
 
-template <typeof_dx_render T>
+template <base_dx_render T>
 class render_pipe_t
 {
 protected:
@@ -14,7 +15,4 @@ protected:
 };
 
 template <typename T>
-concept typeof_dx_render = std::is_base_of<directx_render_t, T>::value;
-
-template <typename T>
-concept typeof_render_pipe = std::is_base_of<render_pipe_t, T>::value;
+concept base_render_pipe = std::is_base_of<render_pipe_t<typename T::dx_render>, T>::value;

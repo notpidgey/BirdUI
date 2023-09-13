@@ -2,7 +2,7 @@
 #include "render_pipe.h"
 #include <Windows.h>
 
-template <typeof_dx_render T>
+template <base_dx_render T>
 class existing_window_pipe_t : public render_pipe_t<T>
 {
 public:

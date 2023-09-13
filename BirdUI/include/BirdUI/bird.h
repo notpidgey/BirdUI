@@ -3,14 +3,17 @@
 #include <type_traits>
 #include "render/pipeline/render_pipe.h"
 
-template <typeof_render_pipe T>
+template <base_render_pipe rp_t>
 class birdui_inst_t
 {
 public:
-	birdui_inst_t();
+	explicit birdui_inst_t()
+	{
 
-	void init(std::shared_ptr<T> render_pipeline);
+	}
+
+	void init(std::shared_ptr<rp_t> render_pipeline);
 
 private:
-	std::shared_ptr<T> render_pipe = nullptr;
+	std::shared_ptr<rp_t> render_pipe = nullptr;
 };

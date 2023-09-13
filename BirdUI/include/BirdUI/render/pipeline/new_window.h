@@ -2,12 +2,12 @@
 #include "render_pipe.h"
 #include <Windows.h>
 
-template <typeof_dx_render T>
+template <base_dx_render T>
 class new_window_pipe_t : public render_pipe_t<T>
 {
 public:
 	explicit new_window_pipe_t(uint32_t window_width, uint32_t window_height, bool default_controls)
-		: render_pipe_t()
+		: render_pipe_t<T>()
 	{
 		width = window_width;
 		height = window_height;

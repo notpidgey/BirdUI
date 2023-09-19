@@ -14,8 +14,8 @@ public:
 		controls = default_controls;
 	}
 
-	void create();
-	void destroy();
+	void create() override;
+	void destroy() override;
 
 private:
 	uint32_t width;

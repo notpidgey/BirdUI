@@ -12,8 +12,8 @@ public:
 		hwnd = hwnd_target;
 	}
 
-	void create();
-	void destroy();
+	void create() override;
+	void destroy() override;
 
 private:
 	HWND hwnd;

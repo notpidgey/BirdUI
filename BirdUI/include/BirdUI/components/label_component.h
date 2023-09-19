@@ -1,6 +1,5 @@
 #pragma once
 #include <string>
-
 #include "base_component.h"
 
 class feather_label_component_t : public feather_component_t
@@ -12,7 +11,7 @@ public:
 		label_text = label;
 	}
 
-	CREATE_STATIC_CTOR(feather_label_component_t);
+	CREATE_STATIC_CTORS(feather_label_component_t);
 
 	void set_text(std::string text);
 	std::string get_text();

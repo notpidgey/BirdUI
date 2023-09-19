@@ -1,5 +1,5 @@
 #include "render/pipeline/directx/dx9.h"
-#include "d3dx9.h"
+#include <d3dx9.h>
 
 bool directx_9_render_t::create_device(HWND target_window, uint32_t width, uint32_t height)
 {

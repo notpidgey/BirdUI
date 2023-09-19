@@ -13,6 +13,3 @@ protected:
 
 	T dx_render;
 };
-
-template <typename T>
-concept base_render_pipe = std::is_base_of<render_pipe_t<typename T::dx_render>, T>::value;

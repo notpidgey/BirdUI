@@ -1,9 +1,11 @@
 #include "render/pipeline/new_window.h"
 
-void new_window_pipe_t::create()
+template <base_dx_render T>
+void new_window_pipe_t<T>::create()
 {
 }
 
-void new_window_pipe_t::destroy()
+template <base_dx_render T>
+void new_window_pipe_t<T>::destroy()
 {
 }

@@ -3,6 +3,7 @@
 
 class IDirect3D9;
 class IDirect3DDevice9;
+
 class directx_9_render_t : public directx_render_t
 {
 public:

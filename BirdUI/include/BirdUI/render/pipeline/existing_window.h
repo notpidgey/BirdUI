@@ -18,3 +18,5 @@ public:
 private:
 	HWND hwnd;
 };
+
+#include "existing_window_t.h"

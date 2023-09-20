@@ -78,6 +78,9 @@
     <ClInclude Include="include\BirdUI\render\pipeline\directx\dx9.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\BirdUI\render\pipeline\existing_window_t.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\components\base_component.cpp">
@@ -120,9 +123,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\render\pipeline\new_window.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\render\pipeline\existing_window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\render\pipeline\render_pipe.cpp">

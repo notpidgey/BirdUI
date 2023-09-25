@@ -125,9 +125,6 @@
     <ClCompile Include="src\render\pipeline\new_window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\render\pipeline\render_pipe.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\render\pipeline\directx\dx9.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

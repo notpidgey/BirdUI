@@ -5,11 +5,12 @@
 template <base_dx_render T>
 class render_pipe_t
 {
+public:
+	virtual void run_frame() = 0;
+
 protected:
-	void create_device();
-	
-	virtual void create() = 0;
-	virtual void destroy() = 0;
+	virtual bool create() = 0;
+	virtual bool destroy() = 0;
 
 	T dx_render;
 };

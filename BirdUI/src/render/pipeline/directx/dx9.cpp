@@ -1,4 +1,6 @@
 #include "render/pipeline/directx/dx9.h"
+#include "render/imgui_impl_dx9.h"
+
 #include <d3dx9.h>
 
 bool directx_9_render_t::create_device(HWND target_window, uint32_t width, uint32_t height)
@@ -21,4 +23,9 @@ bool directx_9_render_t::create_device(HWND target_window, uint32_t width, uint3
 		return false;
 
 	return true;
+}
+
+bool directx_9_render_t::init_imgui()
+{
+	return ImGui_ImplDX9_Init(d3d_device);
 }

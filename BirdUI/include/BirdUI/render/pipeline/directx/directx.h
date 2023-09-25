@@ -9,6 +9,7 @@ class directx_render_t
 {
 public:
 	virtual bool create_device(HWND target_window, uint32_t width, uint32_t height) = 0;
+	virtual bool init_imgui() = 0;
 };
 
 template <typename T>

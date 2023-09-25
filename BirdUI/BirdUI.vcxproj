@@ -58,7 +58,6 @@
     <ClCompile Include="src\render\imgui_widgets.cpp" />
     <ClCompile Include="src\render\pipeline\directx\dx9.cpp" />
     <ClCompile Include="src\render\pipeline\new_window.cpp" />
-    <ClCompile Include="src\render\pipeline\render_pipe.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

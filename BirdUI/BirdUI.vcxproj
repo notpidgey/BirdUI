@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -22,6 +22,7 @@
     <ClInclude Include="include\BirdUI\bird.h" />
     <ClInclude Include="include\BirdUI\components\base_component.h" />
     <ClInclude Include="include\BirdUI\components\label_component.h" />
+    <ClInclude Include="include\BirdUI\input\input.h" />
     <ClInclude Include="include\BirdUI\render\imconfig.h" />
     <ClInclude Include="include\BirdUI\render\imgui.h" />
     <ClInclude Include="include\BirdUI\render\imgui_impl_dx10.h" />
@@ -46,6 +47,7 @@
     <ClCompile Include="src\bird.cpp" />
     <ClCompile Include="src\components\base_component.cpp" />
     <ClCompile Include="src\components\label_component.cpp" />
+    <ClCompile Include="src\input\input.cpp" />
     <ClCompile Include="src\render\imgui.cpp" />
     <ClCompile Include="src\render\imgui_demo.cpp" />
     <ClCompile Include="src\render\imgui_draw.cpp" />

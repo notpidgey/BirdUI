@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClInclude Include="include\BirdUI\bird.h" />
     <ClInclude Include="include\BirdUI\components\base_component.h" />
+    <ClInclude Include="include\BirdUI\components\container_component.h" />
     <ClInclude Include="include\BirdUI\components\label_component.h" />
     <ClInclude Include="include\BirdUI\input\input.h" />
     <ClInclude Include="include\BirdUI\render\imconfig.h" />
@@ -40,12 +41,14 @@
     <ClInclude Include="include\BirdUI\render\pipeline\existing_window_t.h" />
     <ClInclude Include="include\BirdUI\render\pipeline\new_window.h" />
     <ClInclude Include="include\BirdUI\render\pipeline\render_pipe.h" />
+    <ClInclude Include="include\BirdUI\utils\limit.h" />
     <ClInclude Include="include\BirdUI\utils\position.h" />
     <ClInclude Include="include\BirdUI\utils\dimension.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\bird.cpp" />
     <ClCompile Include="src\components\base_component.cpp" />
+    <ClCompile Include="src\components\container_component.cpp" />
     <ClCompile Include="src\components\label_component.cpp" />
     <ClCompile Include="src\input\input.cpp" />
     <ClCompile Include="src\render\imgui.cpp" />

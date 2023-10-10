@@ -6,10 +6,10 @@
 #include "BirdUI/utils/position.h"
 #include "BirdUI/utils/dimension.h"
 
-class feather_component_t;
+class bird_component_t;
 
-typedef std::weak_ptr<feather_component_t> parent_component_t;
-typedef std::vector<std::shared_ptr<feather_component_t>> children_components_t;
+typedef std::weak_ptr<bird_component_t> parent_component_t;
+typedef std::vector<std::shared_ptr<bird_component_t>> children_components_t;
 
 #define CREATE_STATIC_CTORS(class_name) \
 	template <typename... Args> \
@@ -18,10 +18,10 @@ typedef std::vector<std::shared_ptr<feather_component_t>> children_components_t;
 		return std::make_shared<class_name>(std::forward<Args>(args)...); \
 	} 
 
-class feather_component_t : public std::enable_shared_from_this<feather_component_t>
+class bird_component_t : public std::enable_shared_from_this<bird_component_t>
 {
 public:
-	explicit feather_component_t(position_t pos, dimension_t dim, bool render = true, bool input = true)
+	explicit bird_component_t(position_t pos, dimension_t dim, bool render = true, bool input = true)
 	{
 		position = pos;
 		dimension = dimension;
@@ -43,11 +43,17 @@ public:
 	virtual void on_mouse_down() {};
 	virtual void on_mouse_up() {};
 
-	void add_child(std::shared_ptr<feather_component_t> child);
-	std::shared_ptr<feather_component_t> get_child(int index);
+	void add_child(std::shared_ptr<bird_component_t> child);
+	std::shared_ptr<bird_component_t> get_child(int index);
 
-	void set_parent(std::shared_ptr<feather_component_t> parent);
-	std::shared_ptr<feather_component_t> get_parent();
+	void set_parent(std::shared_ptr<bird_component_t> parent);
+	std::shared_ptr<bird_component_t> get_parent();
+
+	void set_input(bool input);
+	bool get_input();
+
+	void set_render(bool render);
+	bool get_render();
 
 	position_t get_position();
 	position_t get_true_position();

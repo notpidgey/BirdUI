@@ -81,6 +81,15 @@
     <ClInclude Include="include\BirdUI\render\pipeline\existing_window_t.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\BirdUI\input\input.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\BirdUI\components\container_component.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\BirdUI\utils\limit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\components\base_component.cpp">
@@ -126,6 +135,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\render\pipeline\directx\dx9.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\input\input.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\components\container_component.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

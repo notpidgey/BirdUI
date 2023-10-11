@@ -15,11 +15,11 @@ void container_component_t::render()
 		{
 			// setup render boundaries to prevent component from drawing outside of them
 			auto [x, y] = child->get_true_position_cache();
-			auto [width, height] = child->get_dimension();
+			auto [w, h] = child->get_dimension();
 
 			render_limit_t render_limit = {
 				x, y,
-				x + width, y + height
+				x + w, y + h
 			};
 
 			g_render.pDevice->SetScissorRect(&render_limit);

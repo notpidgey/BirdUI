@@ -7,8 +7,10 @@
 #include "BirdUI/utils/dimension.h"
 
 class bird_component_t;
+class birdui_inst_t;
 
 typedef std::weak_ptr<bird_component_t> parent_component_t;
+typedef std::weak_ptr<birdui_inst_t> bird_inst_t;
 typedef std::vector<std::shared_ptr<bird_component_t>> children_components_t;
 
 #define CREATE_STATIC_CTORS(class_name) \
@@ -21,13 +23,14 @@ typedef std::vector<std::shared_ptr<bird_component_t>> children_components_t;
 class bird_component_t : public std::enable_shared_from_this<bird_component_t>
 {
 public:
-	explicit bird_component_t(position_t pos, dimension_t dim, bool render = true, bool input = true)
+	explicit bird_component_t(position_t pos, dimension_t dim, bool render = true, bool mouse = true, bool keyboard = false)
 	{
 		position = pos;
 		dimension = dimension;
 
 		render_enabled = render;
-		input_enabled = input;
+		mouse_enabled = mouse;
+		keyboard_enabled = keyboard;
 
 		get_true_position();
 	}
@@ -49,8 +52,11 @@ public:
 	void set_parent(std::shared_ptr<bird_component_t> parent);
 	std::shared_ptr<bird_component_t> get_parent();
 
-	void set_input(bool input);
-	bool get_input();
+	void set_mouse_input(bool input);
+	bool get_mouse_input();
+
+	void set_keyboard_input(bool input);
+	bool get_keyboard_input();
 
 	void set_render(bool render);
 	bool get_render();
@@ -64,6 +70,7 @@ public:
 	dimension_t get_dimension();
 
 protected:
+	bird_inst_t bird_instance;
 	children_components_t children_components;
 
 	position_t position;
@@ -74,7 +81,8 @@ protected:
 	bool true_position_reset;
 
 	bool render_enabled;
-	bool input_enabled;
+	bool mouse_enabled;
+	bool keyboard_enabled;
 
 private:
 	parent_component_t parent_component;

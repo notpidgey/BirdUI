@@ -38,15 +38,26 @@ std::shared_ptr<bird_component_t> bird_component_t::get_parent()
 	return parent_component.lock();
 }
 
-void bird_component_t::set_input(bool input)
+void bird_component_t::set_mouse_input(bool input)
 {
-	input_enabled = input;
+	mouse_enabled = input;
 }
 
-bool bird_component_t::get_input()
+bool bird_component_t::get_mouse_input()
 {
-	return input_enabled;
+	return mouse_enabled;
 }
+
+void bird_component_t::set_keyboard_input(bool input)
+{
+	keyboard_enabled = input;
+}
+
+bool bird_component_t::get_keyboard_input()
+{
+	return keyboard_enabled;
+}
+
 
 void bird_component_t::set_render(bool render)
 {

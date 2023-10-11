@@ -6,6 +6,7 @@
 #include "BirdUI/input/input.h"
 
 #include "BirdUI/components/base_component.h"
+#include "BirdUI/components/container_component.h"
 
 template <class T>
 class birdui_inst_t
@@ -17,11 +18,12 @@ public:
 	}
 
 	void init(std::shared_ptr<T> render_pipeline);
+	void setup_components();
 	void setup_input();
 
 private:
 	std::shared_ptr<T> render_pipe = nullptr;
 	std::unique_ptr<bird_input_t> input = nullptr;
 
-	std::vector<bird_component_t>
+	std::unique_ptr<bird_component_t> components;
 };
